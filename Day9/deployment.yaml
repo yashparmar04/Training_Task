@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: temp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: temp
+  template:
+    metadata:
+      labels:
+        app: temp
+    spec:
+      containers:
+      - name: temp
+        image: yashparmar04/temp:400
+        ports:
+        - containerPort: 80
+
